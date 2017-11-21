@@ -10,7 +10,7 @@ def dlProgress(count, blockSize, totalSize):
     print('\r' + str(round(count * blockSize * 100 / totalSize)) + '%: ' + str('#' * round(count * blockSize * 100 / totalSize / 5)) + str('_' * (20-round(count * blockSize * 100 / totalSize / 5))), end="")
 
 def main():
-    data = json.load(open('/app/config.json'))
+    data = json.load(open('/app/downloads/config.json'))
 
     mode = 'overwrite'
     if data['existing'] and data['existing'] == 'skip':

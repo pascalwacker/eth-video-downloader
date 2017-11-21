@@ -9,12 +9,15 @@ Docker scripts to download videos from the ETH Zürich video portal
   
 ## Howto:  
 1) Clone (or download) this repo
-2) Modify the `config.json` script and add your courses.  
+2) Modify the `downloads/config.json` script and add your courses.  
 3) Run `docker run -v $(pwd)/downloads:/app/downloads pascalwacker/eth-video-downloader:version-1.0` to run the docker image directly from docker cloud
+  
+## Options:
+In `downloads/config.json` the key `existing` accepts either `overwrite` or `skip`. Default is `overwrite`. `overwrite` will overwrite existing files, while `skip` skips them.
   
 ## Alternative (build the docker image yourself):  
 1) Clone (or download) this repo
-2) Modify the `config.json` script and add your courses.  
+2) Modify the `downloads/config.json` script and add your courses.  
 3) Run `docker build -t eth-video-downloader .`  
 4) Run `docker run -v $(pwd)/downloads:/app/downloads eth-video-downloader`
   
