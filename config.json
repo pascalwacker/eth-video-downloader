@@ -1,0 +1,14 @@
+{
+    "existing": "overwrite",
+    "targets": [
+        {
+            "url": "http://www.video.ethz.ch/lectures/<department>/<year>/<semester>/<course>L.html"
+        },
+        {
+            "url": "http://www.video.ethz.ch/lectures/<department>/<year>/<semester>/<course>L.html"
+        },
+        {
+            "url": "http://www.video.ethz.ch/lectures/<department>/<year>/<semester>/<course>L.html"
+        }
+    ]
+}
