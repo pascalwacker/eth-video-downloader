@@ -10,16 +10,16 @@ def dlProgress(count, blockSize, totalSize):
     print('\r' + str(round(count * blockSize * 100 / totalSize)) + '%: ' + str('#' * round(count * blockSize * 100 / totalSize / 5)) + str('_' * (20-round(count * blockSize * 100 / totalSize / 5))), end="")
 
 def main():
-    data = json.load(open('/app/downloads/config.json'))
+    data = json.load(open('/app/config.json'))
 
-    mode = 'overwrite'
-    if data['existing'] and data['existing'] == 'skip':
-        mode = 'skip'
+    mode = 'skip'
+    if data['existing'] and data['existing'] == 'overwrite':
+        mode = 'overwrite'
 
     if len(data['targets']):
         s = requests.Session()
         s.headers['User-Agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:57.0) Gecko/20100101 Firefox/57.0'
-        s.headers['Host'] = 'www.video.ethz.ch'
+        s.headers['Host'] = 'video.ethz.ch'
         s.headers['DNT'] = '1'
         s.headers['Upgrade-Insecure-Requests'] = '1'
         browser = RoboBrowser(history=True,session=s)

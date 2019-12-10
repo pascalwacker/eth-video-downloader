@@ -2,24 +2,24 @@
 Docker scripts to download videos from the ETH Zürich video portal  
   
 ## Current Version:  
-`1.0`
+`1.1`
 
 ## Requirements:
 - Docker  
   
 ## Howto:  
 1) Clone (or download) this repo
-2) Modify the `downloads/config.json` script and add your courses.  
-3) Run `docker run -v $(pwd)/downloads:/app/downloads pascalwacker/eth-video-downloader:version-1.0` to run the docker image directly from docker cloud
+2) Modify the `config.json` script and add your courses.  
+3) Run `docker run -v $(pwd)/downloads:/app/downloads -v $(pwd)/config.json:/app/config.json --rm pascalwacker/eth-video-downloader:version-1.1` to run the docker image directly from docker cloud
   
 ## Options:
-In `downloads/config.json` the key `existing` accepts either `overwrite` or `skip`. Default is `overwrite`. `overwrite` will overwrite existing files, while `skip` skips them.
+In `config.json` the key `existing` accepts either `overwrite` or `skip`. Default is `skip`. `overwrite` will overwrite existing files, while `skip` skips them.
   
 ## Alternative (build the docker image yourself):  
 1) Clone (or download) this repo
-2) Modify the `downloads/config.json` script and add your courses.  
+2) Modify the `config.json` script and add your courses.  
 3) Run `docker build -t eth-video-downloader .`  
-4) Run `docker run -v $(pwd)/downloads:/app/downloads eth-video-downloader`
+4) Run `docker run -v $(pwd)/downloads:/app/downloads -v $(pwd)/config.json:/app/config.json --rm eth-video-downloader`
   
 ## Note:
 If you have permission issues in the download folder after running this script, you can add ` && sudo chown $(whoami):$(whoami) -R downloads` at the end of the `docker run` command. This will change the permission of both user and group to the current user  

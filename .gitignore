@@ -1,5 +1,3 @@
 .vscode
 downloads/*
 !downloads/.gitkeep
-!downloads/config.json
-

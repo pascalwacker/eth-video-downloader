@@ -1,5 +1,5 @@
 {
-    "existing": "overwrite",
+    "existing": "skip",
     "targets": [
         {
             "url": "http://www.video.ethz.ch/lectures/<department>/<year>/<semester>/<course>L.html"
